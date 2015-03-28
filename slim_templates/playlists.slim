@@ -1,0 +1,23 @@
+ion-view view-title="Photos"
+  ion-content.scroll-content.ionic-scroll.has-header
+    /.ion-list
+    .ion-scroll
+      .list
+        .item
+          |tutu
+          span(
+            ng_bind="salt"
+          )
+      .list
+        /.ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}"
+          |{{playlist.title}}
+          br
+          img src="img/pic_3.jpg" width="100%"
+        /.ion-item ng-repeat="photo in photos" 
+        .item ng-repeat="photo in photos" 
+          |{{photo.title}}
+          br
+          img(
+            src="{{photo.image}}" 
+            width="100%"
+          )

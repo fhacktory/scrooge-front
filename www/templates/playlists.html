@@ -1,9 +1,14 @@
-<ion-view view-title="Playlists">
-  <ion-content>
-    <ion-list>
-      <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
-        {{playlist.title}}
-      </ion-item>
-    </ion-list>
-  </ion-content>
-</ion-view>
+<ion-view view-title="Photos"><ion-content class="scroll-content ionic-scroll has-header">
+    <div class="ion-scroll">
+      <div class="list">
+        <div class="item">
+          tutu<span ng_bind="salt"></span>
+        </div>
+      </div>
+      <div class="list">
+        <div class="item" ng-repeat="photo in photos">
+          {{photo.title}}<br /><img src="{{photo.image}}" width="100%" />
+        </div>
+      </div>
+    </div>
+  </ion-content></ion-view>
