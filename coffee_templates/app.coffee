@@ -4,12 +4,12 @@
 # the 2nd parameter is an array of 'requires'
 # 'starter.controllers' is found in controllers.js
 #  'starter.services',
+# 'auth0',
+#'angular-storage',
+#  'angular-jwt'
 angular.module('starter', [
   'ionic'
   'starter.controllers',
-  'auth0',
-  'angular-storage',
-  'angular-jwt'
 ]).run(($ionicPlatform) ->
   $ionicPlatform.ready ->
     # Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -21,7 +21,8 @@ angular.module('starter', [
       StatusBar.styleDefault()
     return
   return
-).config(($stateProvider, $urlRouterProvider  , authProvider, $httpProvider, jwtInterceptorProvider             ) ->
+#).config(($stateProvider, $urlRouterProvider  , authProvider, $httpProvider, jwtInterceptorProvider             ) ->
+).config(($stateProvider, $urlRouterProvider  , $httpProvider) ->
   $stateProvider.state('app',
     url: '/app'
     abstract: true
@@ -30,11 +31,6 @@ angular.module('starter', [
   ).state('app.search',
     url: '/search'
     views: 'menuContent': templateUrl: 'templates/search.html'
-  ).state('app.pose',
-    url: '/search/:categoryId'
-    views: 'menuContent':
-      templateUrl: 'templates/pose.html'
-      controller: 'PosesCtrl'
   ).state('app.browse',
     url: '/browse'
     views: 'menuContent': templateUrl: 'templates/browse.html'
@@ -48,15 +44,25 @@ angular.module('starter', [
     views: 'menuContent':
       templateUrl: 'templates/playlist.html'
       controller: 'PlaylistCtrl'
-  ).state('login',
-    url: '/login'
-    templateUrl: 'templates/login.tpl.html'
-    controller: 'LoginCtrl'
-  ).state('dashboard',
-    url: '/dashboard'
-    templateUrl: 'templates/dashboard.html'
-    data: requiresLogin: true
+
+  # Scrooge Home
+  ).state('app.listnew',
+    url: '/listnew'
+    views: 'menuContent':
+      templateUrl: 'templates/listnew.html'
+      controller:  'ListsCtrl'
+  ).state('app.listnew_step_0',
+    url: '/listnew_step_0'
+    views: 'menuContent':
+      templateUrl: 'templates/create_list_step_0.html'
+      controller:  'ListsCtrl'
+  ).state('app.listnew_step_1',
+    url: '/listnew_step_1'
+    views: 'menuContent':
+      templateUrl: 'templates/create_list_step_1.html'
+      controller:  'ListsCtrl'
   )
+  ###
   authProvider.init
     domain: 'garden-model.auth0.com'
     clientID: 'YzFwJpiJrxePpXFUfsswsKA8ezpq0xhW'
@@ -87,9 +93,13 @@ angular.module('starter', [
 
 
   # if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise '/app/playlists'
+  ###
+  $urlRouterProvider.otherwise '/app/listnew'
   return
+)
+###
 ).run (auth) ->
     # This hooks all auth events to check everything as soon as the app starts
     auth.hookEvents()
+###
 

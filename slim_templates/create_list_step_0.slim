@@ -1,0 +1,31 @@
+ion-view view-title="Listes"
+  ion-content.scroll-content.ionic-scroll.has-header
+    /.ion-list
+
+    .row
+      h1(
+
+      ) Créer une liste courses
+    .row
+    .row
+    .list
+      label.item.item-input.item-floating-label
+        span.input-label(
+
+        )Titre
+        input placeholder=("Titre") type="text" 
+      label.item.item-input.item-floating-label
+        span.input-label Description
+        input placeholder=("Description") type="text" 
+      label.item.item-input.item-floating-label
+        span.input-label Votre Nom
+        input placeholder="Votre Nom" type="text" 
+      label.item.item-input.item-floating-label
+        span.input-label Adresse e-mail
+        input placeholder="Adresse e-mail" type="text" 
+    .row
+      .col.col-33.col-offset-67 
+        button.button.button-positive(
+          ng_click="create_list_step_0()"
+        )
+          | Etape suivante

@@ -1,4 +1,4 @@
-angular.module('starter.controllers', []).controller('AppCtrl', ($scope, $ionicModal, $timeout) ->
+angular.module('starter.controllers', [ 'ui.router']).controller('AppCtrl', ($scope, $ionicModal, $timeout) ->
   # Form data for the login modal
   $scope.loginData = {}
   # Create the login modal that we will use later
@@ -76,6 +76,15 @@ angular.module('starter.controllers', []).controller('AppCtrl', ($scope, $ionicM
   ]
   return
 ).controller( 'PlaylistCtrl', ($scope, $stateParams) ->
+
+).controller( 'ListsCtrl', ($scope, $state, $stateParams) ->
+  $scope.create_list = ->
+    $state.go 'app.listnew_step_0'
+  $scope.create_list_step_0 = ->
+    $state.go 'app.listnew_step_1'
+  $scope.create_list_finsh_step_sheare = ->
+    $state.go 'app.listnew_step_1'
+
 
 ).controller( 'PosesCtrl', ($scope, $http) ->
   $scope.show_me = 'tutu'

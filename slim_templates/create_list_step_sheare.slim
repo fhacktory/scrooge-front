@@ -1,0 +1,23 @@
+ion-view view-title="Listes"
+  ion-content.scroll-content.ionic-scroll.has-header
+    /.ion-list
+
+    .row
+      h1(
+
+      ) Créer une liste courses
+    .row
+      span 2 liste de course
+    .row
+      .col.col-33 style="width:100%;border:1px solid #ddd;border-right:0px"
+          input type="text" placeholder="Produit"
+      .col.col-33 style="width:100%;border:1px solid #ddd;border-right:0px"
+          input type="text" placeholder="Quantité"
+      .col.col-33 style="width:100%;border:1px solid #ddd"
+          input type="text" placeholder="Unité"
+    .row
+      .col.col-33.col-offset-67 
+        button.button.button-positive(
+          ng_click="create_list_finsh_step_sheare()"
+        )
+          | Etape suivante

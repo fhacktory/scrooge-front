@@ -1,0 +1,14 @@
+<ion-view view-title="Photos"><ion-content class="scroll-content ionic-scroll has-header">
+    <div class="ion-scroll">
+      <div class="list">
+        <div class="item">
+          tutu<span ng_bind="salt"></span>
+        </div>
+      </div>
+      <div class="list">
+        <div class="item" ng-repeat="photo in photos">
+          {{photo.title}}<br /><img src="{{photo.image}}" width="100%" />
+        </div>
+      </div>
+    </div>
+  </ion-content></ion-view>
