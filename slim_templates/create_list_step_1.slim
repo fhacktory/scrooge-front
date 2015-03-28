@@ -8,6 +8,11 @@ ion-view view-title="Listes"
       ) Créer une liste courses
     .row
       span 2 liste de course
+      span ng_bind='list.id'
+      /button.button.button-positive(
+        ng_click="show_me()"
+        )
+        | show me
     .row
       .col.col-33 style="width:100%;border:1px solid #ddd;border-right:0px"
           input type="text" placeholder="Produit"

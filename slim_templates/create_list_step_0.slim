@@ -8,32 +8,33 @@ ion-view view-title="Listes"
     .list
       label.item.item-input.item-floating-label
         span.input-label(
-        )Titre
+        ) Titre
         input(
           placeholder = "Titre"
           type        = "text"
-          ng_bind     = 'list_title'
+          ng-model     = 'list.title'
         )
+        /span ng-bind = 'list.title'
       label.item.item-input.item-floating-label
         span.input-label Description
         input(
           placeholder = "Description"
           type        = "text"
-          ng_bind     = 'list_title'
+          ng-model     = 'list.description'
         ) 
       label.item.item-input.item-floating-label
         span.input-label Votre Nom
         input(
           placeholder = "Votre Nom"
           type        = "text"
-          ng_bind     = 'list_title'
+          ng-model     = 'list.user'
         )
       label.item.item-input.item-floating-label
         span.input-label Adresse e-mail
         input(
           placeholder = "Adresse e-mail"
           type        = "text"
-          ng_bind     = 'list_title'
+          ng-model     = 'list.email'
         )
     .row
       .col.col-33.col-offset-67 
