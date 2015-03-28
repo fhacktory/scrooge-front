@@ -62,8 +62,14 @@
     $scope.create_list_step_0 = function() {
       return $state.go('app.listnew_step_1');
     };
-    return $scope.create_list_finsh_step_sheare = function() {
-      return $state.go('app.listnew_step_1');
+    $scope.create_list_finsh_step_items = function() {
+      return $state.go('app.listnew_step_sheare');
+    };
+    $scope.create_list_finsh_step_sheare = function() {
+      return $state.go('app.listnew_step_message');
+    };
+    return $scope.create_list_finsh_step_message = function() {
+      return $state.go('app.listnew_step_confirm_message');
     };
   }).controller('PosesCtrl', function($scope, $http) {
     var url;

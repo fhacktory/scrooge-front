@@ -61,6 +61,21 @@ angular.module('starter', [
     views: 'menuContent':
       templateUrl: 'templates/create_list_step_1.html'
       controller:  'ListsCtrl'
+  ).state('app.listnew_step_sheare',
+    url: '/listnew_step_sheare'
+    views: 'menuContent':
+      templateUrl: 'templates/create_list_step_sheare.html'
+      controller:  'ListsCtrl'
+  ).state('app.listnew_step_message',
+    url: '/listnew_step_message'
+    views: 'menuContent':
+      templateUrl: 'templates/create_list_step_message.html'
+      controller:  'ListsCtrl'
+  ).state('app.listnew_step_confirm_message',
+    url: '/listnew_step_confirm_message'
+    views: 'menuContent':
+      templateUrl: 'templates/create_list_step_confirm_message.html'
+      controller:  'ListsCtrl'
   )
   ###
   authProvider.init
