@@ -7,8 +7,25 @@ ion-view view-title="Listes"
 
       ) Votre list est pubilée
     .row
-      .col.col-33.col-offset-67 
-        button.button.button-positive(
-          ng_click="create_list_finsh_step_confirm_message()"
-        )
-          | Etape suivante
+    .card
+      .item.item-text-wrap
+        center
+          h1 Félicitations !
+          |Votre liste de course vient d'être publiée. 
+          br
+          |Vous pouvez l'administrer à tout moment en suivant le lien suivant :
+          br
+          a href='#'
+            |http://www.ceciestunlienunique123.com
+          br
+          |De même, le lien de partage de votre 
+          br
+          |liste est le suivant :
+          br
+          a href='#'
+            |http://www.ceciestunlienunique456.com
+    .col.col-33.col-offset-67 
+      button.button.button-positive(
+        ng_click="create_list_finsh_step_confirm_message()"
+      )
+        | Etape suivante

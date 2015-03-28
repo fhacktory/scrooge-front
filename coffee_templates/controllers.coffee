@@ -1,4 +1,6 @@
-angular.module('starter.controllers', [ 'ui.router']).controller('AppCtrl', ($scope, $ionicModal, $timeout) ->
+@app = angular.module('starter.controllers', [ 'ui.router'])
+  
+@app.controller('AppCtrl', ($scope, $ionicModal, $timeout) ->
   # Form data for the login modal
   $scope.loginData = {}
   # Create the login modal that we will use later
@@ -77,50 +79,4 @@ angular.module('starter.controllers', [ 'ui.router']).controller('AppCtrl', ($sc
   return
 ).controller( 'PlaylistCtrl', ($scope, $stateParams) ->
 
-).controller( 'ListsCtrl', ($scope, $state, $stateParams) ->
-  $scope.create_list = ->
-    $state.go 'app.listnew_step_0'
-  $scope.create_list_step_0 = ->
-    $state.go 'app.listnew_step_1'
-  $scope.create_list_finsh_step_items = ->
-    $state.go 'app.listnew_step_sheare'
-  $scope.create_list_finsh_step_sheare = ->
-    $state.go 'app.listnew_step_message'
-  $scope.create_list_finsh_step_message = ->
-    $state.go 'app.listnew_step_confirm_message'
-
-
-).controller( 'PosesCtrl', ($scope, $http) ->
-  $scope.show_me = 'tutu'
-  url            = 'http://localhost:3003/secured_ping/ping'
-  $scope.call_rails = ->
-    console.log 'call_rails'
-    $http.get(url).success((photos) ->
-      console.log 'nope nope nope'
-      $scope.show_me = photos
-    ).error (data) ->
-      console.log 'nope nope nope'
-
-).controller( 'LoginCtrl', (store, $scope, $location, auth) ->
-
-  $scope.login = ->
-    auth.signin { authParams:
-      scope: 'openid profile offline_access'
-      device: 'Mobile device' }, ((profile, token, accessToken, state, refreshToken) ->
-      # Success callback
-      store.set 'profile', profile
-      store.set 'token', token
-      store.set 'refreshToken', refreshToken
-      $location.path '/'
-      return
-    ), ->
-      # Error callback
-      return
-    return
-
-  $scope.logout = ->
-    auth.signout()
-    store.remove 'profile'
-    store.remove 'token'
-    return
 )
