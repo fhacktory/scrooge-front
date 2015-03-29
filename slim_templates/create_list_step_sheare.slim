@@ -1,13 +1,29 @@
 ion-view view-title="Listes"
-  ion-content.scroll-content.ionic-scroll.has-header
-    /.ion-list
-
+  ion-content.scroll-content.ionic-scroll.has-header(
+    ng_controller='ContactsCtrl'
+  )
     .row
       h1(
 
       ) Créer une liste courses
     .row
       span 3 Partager
+    .row(
+        ng_repeat="mail in contacts"
+      )
+      span(
+        ng_bind="mail"
+      )
+    .row style="padding-top:50px"
+      .col style="width:100%;border:1px solid #ddd;border-right:0px"
+        input(
+          type        = "text"
+          placeholder = "Ajouter une adresse mail"
+          ng_model    = 'contact.mail'
+          ng-enter    = 'add_contact()'
+          ng-blur     = 'add_contact()'
+          width = '100%'
+        ) 
     .row
       .col.col-33.col-offset-67 
         button.button.button-positive(

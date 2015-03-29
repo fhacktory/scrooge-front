@@ -9,17 +9,16 @@
     console.log count
 
   $scope.$on "load_items", (e, items) ->
-    #console.log items
     for item in items
       $scope.items.sync
         .push $scope.transpose_item(item)
 
   $scope.transpose_item = (item)->
-      normal_item =
-          product:   item.name
-          quantity:  item.quantity
-          id:        item.id
-          unity:     item.unit
+    normal_item =
+      product:   item.name
+      quantity:  item.quantity
+      id:        item.id
+      unity:     item.unit
 
   $scope.add_item = ->
     console.log 'touffu .com'

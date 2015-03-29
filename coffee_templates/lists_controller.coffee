@@ -12,15 +12,9 @@
   $scope.$on "ping", (e, count) ->
     console.log count
 
-
   $scope.create_list_finsh_step_items = ->
-
     $state.go 'app.listnew_step_sheare'
 
-
-
-  $scope.create_list_finsh_step_sheare = ->
-    $state.go 'app.listnew_step_message'
   $scope.create_list_finsh_step_message = ->
     $state.go 'app.listnew_step_confirm_message'
 

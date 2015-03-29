@@ -17,9 +17,6 @@
     $scope.create_list_finsh_step_items = function() {
       return $state.go('app.listnew_step_sheare');
     };
-    $scope.create_list_finsh_step_sheare = function() {
-      return $state.go('app.listnew_step_message');
-    };
     $scope.create_list_finsh_step_message = function() {
       return $state.go('app.listnew_step_confirm_message');
     };
