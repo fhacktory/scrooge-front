@@ -1,4 +1,4 @@
-<ion-view view-title="Listes"><ion-content class="scroll-content ionic-scroll has-header">
+<ion-view view-title="Listes"><ion-content class="scroll-content ionic-scroll has-header" ng_controller="ItemsCtrl">
     <div class="row">
       <h1>
         Créer une liste courses
@@ -7,15 +7,33 @@
     <div class="row">
       <span>2 liste de course</span><span ng_bind="list.id"></span>
     </div>
-    <div class="row">
+    <div class="row" ng_repeat="i in items.sync">
       <div class="col col-33" style="width:100%;border:1px solid #ddd;border-right:0px">
-        <input placeholder="Produit" type="text" />
+        <span ng_bind="i.product"></span>
       </div>
       <div class="col col-33" style="width:100%;border:1px solid #ddd;border-right:0px">
-        <input placeholder="Quantité" type="text" />
+        <span ng_bind="i.quantity"></span>
       </div>
       <div class="col col-33" style="width:100%;border:1px solid #ddd">
-        <input placeholder="Unité" type="text" />
+        <div class="row" style="padding:0">
+          <div class="col col-80" style="padding:0">
+            <span ng_bind="i.unity"></span>
+          </div>
+          <div class="col col-20" style="padding:0">
+            <button class="button button-small button-assertive" ng_click="delete_item(i)">x</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="padding-top:50px">
+      <div class="col col-33" style="width:100%;border:1px solid #ddd;border-right:0px">
+        <input ng-blur="add_item()" ng-enter="add_item()" ng_model="item.product" placeholder="Produit" type="text" />
+      </div>
+      <div class="col col-33" style="width:100%;border:1px solid #ddd;border-right:0px">
+        <input ng-blur="add_item()" ng-enter="add_item()" ng_model="item.quantity" placeholder="Quantité" type="text" />
+      </div>
+      <div class="col col-33" style="width:100%;border:1px solid #ddd">
+        <input ng-blur="add_item()" ng-enter="add_item()" ng_model="item.unity" placeholder="Unité" type="text" />
       </div>
     </div>
     <div class="row">

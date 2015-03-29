@@ -1,5 +1,7 @@
 ion-view view-title="Listes"
-  ion-content.scroll-content.ionic-scroll.has-header
+  ion-content.scroll-content.ionic-scroll.has-header(
+    ng_controller="ItemsCtrl"
+  )
     /.ion-list
 
     .row
@@ -13,13 +15,54 @@ ion-view view-title="Listes"
         ng_click="show_me()"
         )
         | show me
-    .row
+    .row(
+      ng_repeat='i in items.sync'
+      )
       .col.col-33 style="width:100%;border:1px solid #ddd;border-right:0px"
-          input type="text" placeholder="Produit"
+        span(
+
+          ng_bind    = 'i.product'
+        ) 
       .col.col-33 style="width:100%;border:1px solid #ddd;border-right:0px"
-          input type="text" placeholder="Quantité"
+        span(
+          ng_bind    = 'i.quantity'
+        ) 
       .col.col-33 style="width:100%;border:1px solid #ddd"
-          input type="text" placeholder="Unité"
+        .row style="padding:0"
+          .col.col-80 style="padding:0"
+            span(
+              ng_bind    = 'i.unity'
+            ) 
+          .col.col-20 style="padding:0"
+            button.button.button-small.button-assertive(
+              ng_click="delete_item(i)"
+            ) x
+
+    .row style="padding-top:50px"
+      .col.col-33 style="width:100%;border:1px solid #ddd;border-right:0px"
+        input(
+          type        = "text"
+          placeholder = "Produit"
+          ng_model    = 'item.product'
+          ng-enter    = 'add_item()'
+          ng-blur     = 'add_item()'
+        ) 
+      .col.col-33 style="width:100%;border:1px solid #ddd;border-right:0px"
+        input(
+          type        = "text"
+          placeholder = "Quantité"
+          ng_model    = 'item.quantity'
+          ng-enter    = 'add_item()'
+          ng-blur     = 'add_item()'
+        ) 
+      .col.col-33 style="width:100%;border:1px solid #ddd"
+        input(
+          type        = "text"
+          placeholder = "Unité"
+          ng_model    = 'item.unity'
+          ng-enter    = 'add_item()'
+          ng-blur     = 'add_item()'
+        )
     .row
       .col.col-33.col-offset-67 
         button.button.button-positive(
