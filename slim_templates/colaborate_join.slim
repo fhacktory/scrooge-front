@@ -1,0 +1,69 @@
+ion-view view-title="Listes"
+  ion-content.scroll-content.ionic-scroll.has-header(
+  )
+    /ng_controller="ItemsCtrl"
+    /.ion-list
+
+    .card
+      .item.item-text-wrap
+
+        .row
+          h1(
+
+          ) hey !
+        .row style='padding:15px 0'
+          .col.col-50.col-offset-25 
+            center pour pouvoir participer à cette liste, 
+        .row style='padding:15px 0'
+          .col.col-50.col-offset-25 
+            center merci d'indiquer aux autres participants qui tu es.
+
+        .row
+          .col.col-50
+            button.button.button-positive(
+            )
+              /ng_click="create_list_finsh_step_items()"
+              | j'ai un compte !
+          .col.col-50
+            button.button.button-positive(
+            )
+              /ng_click="create_list_finsh_step_items()"
+              | je veux créer un compte
+
+      /span ng_bind='list.id'
+      /button.button.button-positive(
+        ng_click="show_me()"
+        )
+        | show me
+    .row 
+      .col.col-80.col-offset-10 
+        span tu ne souhaites pas t'inscrire ? c'est ta première visite sur cette liste ? 
+        p
+        span aucun problème ! indique simplement ton prénom :
+
+    .row style="padding-top:50px"
+      .col.col-33.col-offset-33 style="width:100%;border:1px solid #ddd;"
+        input(
+          type        = "text"
+          placeholder = "Prénon"
+          ng_model    = 'item.quantity'
+          ng-enter    = 'add_item()'
+          ng-blur     = 'add_item()'
+        ) 
+    /.row
+      span De retour ? Qui es tu ?
+    /.row 
+      .col.col-33.col-offset-33 style="width:100%;border:1px solid #ddd;"
+        input(
+          type        = "text"
+          placeholder = "Quantité"
+          ng_model    = 'item.quantity'
+          ng-enter    = 'add_item()'
+          ng-blur     = 'add_item()'
+        ) 
+    .row
+      .col.col-33.col-offset-33 
+        button.button.button-large.button-balanced(
+          ng_click="create_list_finsh_step_items()"
+        )
+          | Go !

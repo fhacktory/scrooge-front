@@ -1,0 +1,37 @@
+<ion-view view-title="Listes"><ion-content class="scroll-content ionic-scroll has-header">
+    <div class="row">
+      <h1>
+        Hey !
+      </h1>
+    </div>
+    <div class="row">
+      <span>Pour pouvoir participer à cette liste, merci d'indiquer aux autres participants qui tu es.</span>
+    </div>
+    <div class="row">
+      <div class="col col-33">
+        <button class="button button-positive">J'ai un compte !</button><button class="button button-positive">Je veux créer un compte</button>
+      </div>
+      <span ng_bind="list.id"></span>
+    </div>
+    <div class="row">
+      <span>Tu ne souhaites pas t'inscrire ? C'est ta première visite sur cette liste ? Aucun problème ! Indique simplement ton prénom :</span>
+    </div>
+    <div class="row" style="padding-top:50px">
+      <div class="col col-33 col-offset-33" style="width:100%;border:1px solid #ddd;">
+        <input ng-blur="add_item()" ng-enter="add_item()" ng_model="item.quantity" placeholder="Quantité" type="text" />
+      </div>
+    </div>
+    <div class="row">
+      <span>De retour ? Qui es tu ?</span>
+    </div>
+    <div class="row">
+      <div class="col col-33 col-offset-33" style="width:100%;border:1px solid #ddd;">
+        <input ng-blur="add_item()" ng-enter="add_item()" ng_model="item.quantity" placeholder="Quantité" type="text" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-33 col-offset-67">
+        <button class="button button-positive" ng_click="create_list_finsh_step_items()">Etape suivante</button>
+      </div>
+    </div>
+  </ion-content></ion-view>

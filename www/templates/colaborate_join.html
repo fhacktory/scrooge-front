@@ -1,0 +1,46 @@
+<ion-view view-title="Listes"><ion-content class="scroll-content ionic-scroll has-header">
+    <div class="card">
+      <div class="item item-text-wrap">
+        <div class="row">
+          <h1>
+            hey !
+          </h1>
+        </div>
+        <div class="row" style="padding:15px 0">
+          <div class="col col-50 col-offset-25">
+            <center>pour pouvoir participer à cette liste, </center>
+          </div>
+        </div>
+        <div class="row" style="padding:15px 0">
+          <div class="col col-50 col-offset-25">
+            <center>merci d'indiquer aux autres participants qui tu es.</center>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-50">
+            <button class="button button-positive">j'ai un compte !</button>
+          </div>
+          <div class="col col-50">
+            <button class="button button-positive">je veux créer un compte</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-80 col-offset-10">
+        <span>tu ne souhaites pas t'inscrire ? c'est ta première visite sur cette liste ? </span>
+        <p></p>
+        <span>aucun problème ! indique simplement ton prénom :</span>
+      </div>
+    </div>
+    <div class="row" style="padding-top:50px">
+      <div class="col col-33 col-offset-33" style="width:100%;border:1px solid #ddd;">
+        <input ng-blur="add_item()" ng-enter="add_item()" ng_model="item.quantity" placeholder="Prénon" type="text" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-33 col-offset-33">
+        <button class="button button-large button-balanced" ng_click="create_list_finsh_step_items()">Go !</button>
+      </div>
+    </div>
+  </ion-content></ion-view>

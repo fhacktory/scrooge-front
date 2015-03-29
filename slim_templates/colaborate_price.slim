@@ -1,0 +1,58 @@
+ion-view view-title="Listes"
+  ion-content.scroll-content.ionic-scroll.has-header(
+  )
+    /ng_controller="ItemsCtrl"
+    /.ion-list
+
+    .row
+      h1(
+
+      ) Hey !
+    .row
+      span Pour pouvoir participer à cette liste, merci d'indiquer aux autres participants qui tu es.
+
+    .row
+      .col.col-33
+        button.button.button-positive(
+        )
+          /ng_click="create_list_finsh_step_items()"
+          | J'ai un compte !
+        button.button.button-positive(
+        )
+          /ng_click="create_list_finsh_step_items()"
+          | Je veux créer un compte
+
+      span ng_bind='list.id'
+      /button.button.button-positive(
+        ng_click="show_me()"
+        )
+        | show me
+    .row
+      span Tu ne souhaites pas t'inscrire ? C'est ta première visite sur cette liste ? Aucun problème ! Indique simplement ton prénom :
+
+    .row style="padding-top:50px"
+      .col.col-33.col-offset-33 style="width:100%;border:1px solid #ddd;"
+        input(
+          type        = "text"
+          placeholder = "Quantité"
+          ng_model    = 'item.quantity'
+          ng-enter    = 'add_item()'
+          ng-blur     = 'add_item()'
+        ) 
+    .row
+      span De retour ? Qui es tu ?
+    .row 
+      .col.col-33.col-offset-33 style="width:100%;border:1px solid #ddd;"
+        input(
+          type        = "text"
+          placeholder = "Quantité"
+          ng_model    = 'item.quantity'
+          ng-enter    = 'add_item()'
+          ng-blur     = 'add_item()'
+        ) 
+    .row
+      .col.col-33.col-offset-67 
+        button.button.button-positive(
+          ng_click="create_list_finsh_step_items()"
+        )
+          | Etape suivante

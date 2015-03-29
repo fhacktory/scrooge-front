@@ -1,0 +1,49 @@
+<ion-view view-title="Listes"><ion-content class="scroll-content ionic-scroll has-header">
+    <div class="row">
+      <div class="col col-50">
+        <h2>
+          Soirée Raclette
+        </h2>
+      </div>
+      <div class="col col-50">
+        <button class="button button-positive" style="float:right">User Name</button><button class="button button-clear button-positive" style="float:right">User auie</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-67 col-offset-33">
+        <p>
+          lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem loremlorem
+        </p>
+      </div>
+    </div>
+    <div class="row" ng_controller="ColaborateCtrl" style="background-color:#eef">
+      <div class="col">
+        <div class="row" style="padding-bottom:50px">
+          <div class="col col-50">
+            <div class="button-bar">
+              <a class="button button-energized">Je vais acheter</a><a class="button button-outline button-energized">J'ai acheté</a>
+            </div>
+          </div>
+          <div class="col col-col50">
+            <button class="button button-balanced" style="float:right">Edition</button>
+          </div>
+        </div>
+        <div class="row" ng_repeat="i in items.sync" style="padding-bottom:15px">
+          <p style="background-color:#fff;height:34px;margin:0;width:90%;padding:8px 0 0 20px ">
+            <span ng_bind="i.product"></span><span>&nbsp;-&nbsp;&nbsp;</span><span ng_bind="i.quantity"></span><span>&nbsp;</span><span ng_bind="i.unity"></span>
+          </p>
+          <button class="button button-small button-positive" style="width:10%;float:right">JMC</button>
+        </div>
+        <div class="row">
+          <h1>
+            add new zon
+          </h1>
+        </div>
+        <div class="row">
+          <h1>
+            messages zone
+          </h1>
+        </div>
+      </div>
+    </div>
+  </ion-content></ion-view>

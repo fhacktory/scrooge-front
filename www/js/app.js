@@ -93,6 +93,30 @@
           controller: 'ListsCtrl'
         }
       }
+    }).state('app.colaborate_join', {
+      url: '/colaborate_join',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/colaborate_join.html',
+          controller: 'ListsCtrl'
+        }
+      }
+    }).state('app.colaborate', {
+      url: '/colaborate',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/colaborate.html',
+          controller: 'ListsCtrl'
+        }
+      }
+    }).state('app.colaborate_price', {
+      url: '/colaborate_price',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/colaborate_price.html',
+          controller: 'ListsCtrl'
+        }
+      }
     });
 
     /*

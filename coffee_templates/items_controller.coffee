@@ -1,9 +1,10 @@
-@app.controller 'ItemsCtrl', ($scope, $state, $stateParams, $http,ListsSrv,ItemSrv) ->
+@app.controller 'ColaborateCtrl', ($scope, $state, $stateParams, $http,ListsSrv,ItemSrv) ->
   api = 'http://scrooge.reziga.eu/app_dev.php/api/'
   $scope.list = {id: 4}
   ListsSrv.list.id = 4
   ItemSrv.init_item $scope
   ItemSrv.items_from_list $scope.list.id
+  console.log 'auieauie'
 
   $scope.$on "ping", (e, count) ->
     console.log count
