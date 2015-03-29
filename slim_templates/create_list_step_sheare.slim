@@ -9,10 +9,10 @@ ion-view view-title="Listes"
     .row
       span 3 Partager
     .row(
-        ng_repeat="mail in contacts"
+        ng_repeat="c in contacts.sync"
       )
       span(
-        ng_bind="mail"
+        ng_bind="c.mail"
       )
     .row style="padding-top:50px"
       .col style="width:100%;border:1px solid #ddd;border-right:0px"
