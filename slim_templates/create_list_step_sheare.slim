@@ -10,10 +10,16 @@ ion-view view-title="Listes"
       span 3 Partager
     .row(
         ng_repeat="c in contacts.sync"
+        style="padding:0"
       )
-      span(
-        ng_bind="c.mail"
-      )
+      .col.col-80 style="padding:0"
+        span(
+          ng_bind    = 'c.mail'
+        ) 
+      .col.col-20 style="padding:0"
+        button.button.button-small.button-assertive(
+          ng_click="delete_contact(c)"
+        ) x
     .row style="padding-top:50px"
       .col style="width:100%;border:1px solid #ddd;border-right:0px"
         input(

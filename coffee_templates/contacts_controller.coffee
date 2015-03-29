@@ -38,3 +38,15 @@
       console.log data
 
 
+  $scope.delete_contact = (contact) ->
+    url  = "#{api}sharedusers/#{contact.id}"
+    $http.delete(url).success((data) =>
+      cleaned_contacts = []
+      for i in $scope.contacts.sync
+        unless i.id+"" is contact.id+""
+          cleaned_contacts.push i
+      $scope.contacts.sync = cleaned_contacts
+    ).error (data) ->
+      console.log 'nope nope nope'
+      console.log data
+

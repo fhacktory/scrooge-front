@@ -7,8 +7,13 @@
     <div class="row">
       <span>3 Partager</span>
     </div>
-    <div class="row" ng_repeat="c in contacts.sync">
-      <span ng_bind="c.mail"></span>
+    <div class="row" ng_repeat="c in contacts.sync" style="padding:0">
+      <div class="col col-80" style="padding:0">
+        <span ng_bind="c.mail"></span>
+      </div>
+      <div class="col col-20" style="padding:0">
+        <button class="button button-small button-assertive" ng_click="delete_contact(c)">x</button>
+      </div>
     </div>
     <div class="row" style="padding-top:50px">
       <div class="col" style="width:100%;border:1px solid #ddd;border-right:0px">

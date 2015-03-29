@@ -31,7 +31,7 @@
         id: contact.id
       };
     };
-    return $scope.add_contact = function() {
+    $scope.add_contact = function() {
       var contact, contact_api, url;
       console.log('touffu .com');
       contact = $scope.contact;
@@ -45,6 +45,27 @@
         new_contacts = $scope.transpose_contacts(data.shared_users);
         return $scope.contact = {};
       }).error(function(data) {
+        console.log('nope nope nope');
+        return console.log(data);
+      });
+    };
+    return $scope.delete_contact = function(contact) {
+      var url;
+      url = "" + api + "sharedusers/" + contact.id;
+      return $http["delete"](url).success((function(_this) {
+        return function(data) {
+          var cleaned_contacts, i, _i, _len, _ref;
+          cleaned_contacts = [];
+          _ref = $scope.contacts.sync;
+          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+            i = _ref[_i];
+            if (i.id + "" !== contact.id + "") {
+              cleaned_contacts.push(i);
+            }
+          }
+          return $scope.contacts.sync = cleaned_contacts;
+        };
+      })(this)).error(function(data) {
         console.log('nope nope nope');
         return console.log(data);
       });
